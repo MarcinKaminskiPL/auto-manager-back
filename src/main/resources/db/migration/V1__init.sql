@@ -5,3 +5,12 @@ create table car
     model          varchar(255),
     odometerstatus int
 );
+create table expense
+(
+    id         int primary key auto_increment,
+    car_id     int,
+    created_at timestamp,
+    value      decimal(10, 2) not null,
+    description varchar(255) not null,
+    FOREIGN KEY (car_id) REFERENCES car (id)
+);

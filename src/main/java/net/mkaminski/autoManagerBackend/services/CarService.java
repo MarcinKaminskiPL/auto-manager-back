@@ -26,4 +26,12 @@ public class CarService {
     public void add(Car car) {
         carRepository.save(car);
     }
+
+    public boolean existsById(Long id) {
+        return carRepository.existsById(id);
+    }
+
+    public void deleteById(Long id) {
+        carRepository.deleteById(id);
+    }
 }
