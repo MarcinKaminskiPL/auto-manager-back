@@ -1,3 +1,4 @@
+/*
 package net.mkaminski.autoManagerBackend.config;
 
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -47,3 +48,4 @@ public class dbConfig {
         return new JdbcTemplate(getDataSource());
     }
 }
+*/
