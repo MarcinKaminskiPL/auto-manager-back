@@ -30,7 +30,6 @@ public class CarApi {
     @DeleteMapping("{id}")
     ResponseEntity deleteCar(@PathVariable Long id) {
         if (carService.existsById(id)) {
-            System.out.println("delete car");
             carService.deleteById(id);
             return new ResponseEntity(HttpStatus.ACCEPTED);
         } else {

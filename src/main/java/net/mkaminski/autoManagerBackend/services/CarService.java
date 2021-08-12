@@ -1,11 +1,10 @@
 package net.mkaminski.autoManagerBackend.services;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.CarRepository;
+import net.mkaminski.autoManagerBackend.model.CarRepo;
 import net.mkaminski.autoManagerBackend.model.Car;
+import net.mkaminski.autoManagerBackend.model.ExpenseRepo;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,25 +12,29 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class CarService {
-    private final CarRepository carRepository;
+    private final CarRepo carRepo;
+    private final ExpenseRepo expenseRepo;
 
     public List<Car> getCars() {
-        return carRepository.findAll();
+        return carRepo.findAll();
     }
 
     Optional<Car> getCar(long id) {
-        return carRepository.findById(id);
+        return carRepo.findById(id);
     }
 
     public void add(Car car) {
-        carRepository.save(car);
+        carRepo.save(car);
     }
 
     public boolean existsById(Long id) {
-        return carRepository.existsById(id);
+        return carRepo.existsById(id);
     }
 
     public void deleteById(Long id) {
-        carRepository.deleteById(id);
+        carRepo.findById(id).get().getExpenses().forEach(expense -> {
+            expenseRepo.deleteById(expense.getId());
+        });
+        carRepo.deleteById(id);
     }
 }
