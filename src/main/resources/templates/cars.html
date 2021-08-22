@@ -1,0 +1,38 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto Manager</title>
+</head>
+<body>
+<h2>It's list of your cars:</h2>
+<table>
+    <tr>
+        <th>CAR ID</th>
+        <th>MARK</th>
+        <th>MODEL</th>
+        <th>ODOMETER STATUS</th>
+    </tr>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.getId()}"/>
+        <td th:text="${car.getMark()}"/>
+        <td th:text="${car.getModel()}"/>
+        <td th:text="${car.getOdometerstatus()}"/>
+    </tr>
+    <tr>
+        <form th:action="add-car" th:object="${newCar}" method="post">
+            <td>auto-increment</td>
+            <td><input type="text" th:field="*{mark}"></td>
+            <td><input type="text" th:field="*{model}"></td>
+            <td><input type="text" th:field="*{odometerstatus}"></td>
+            <td><input type="submit" value="add"></td>
+        </form>
+    </tr>
+</table>
+</body>
+</html>

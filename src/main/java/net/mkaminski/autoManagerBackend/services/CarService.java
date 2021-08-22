@@ -21,7 +21,7 @@ public class CarService {
         return carRepo.findAll();
     }
 
-    Optional<Car> getCar(long id) {
+    public Optional<Car> getCar(long id) {
         return carRepo.findById(id);
     }
 
@@ -36,6 +36,9 @@ public class CarService {
     public void deleteById(Long id) {
         carRepo.findById(id).get().getExpenses().forEach(expense -> {
             expenseRepo.deleteById(expense.getId());
+        });
+        carRepo.findById(id).get().getTrips().forEach(trip -> {
+            tripRepo.deleteById(trip.getId());
         });
         carRepo.deleteById(id);
     }

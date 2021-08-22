@@ -1,0 +1,46 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto Manager</title>
+</head>
+<body>
+<h2>It's list of your trip:</h2>
+<table>
+    <tr>
+        <th>CREATED AT</th>
+        <th>TRIP ID</th>
+        <th>CAR ID</th>
+        <th>DESTINATION</th>
+        <th>DISTANCE</th>
+        <th>DESCRIPTION</th>
+    </tr>
+    <tr th:each="trip : ${trips}">
+        <td th:text="${trip.getCreatedAt()}"/>
+        <td th:text="${trip.getId()}"/>
+        <td th:text="${trip.getCarId()}"/>
+        <td th:text="${trip.getDestination()}"/>
+        <td th:text="${trip.getDistance()}"/>
+        <td th:text="${trip.getDescription()}"/>
+    </tr>
+    <tr>
+        <form th:action="add-trip" th:object="${newTrip}" method="post">
+            <td>auto-add</td>
+            <td>auto-increment</td>
+            <td>
+                <select></select>
+            </td>
+            <td><input type="text" th:field="*{destination}"></td>
+            <td><input type="number" th:field="*{distance}"></td>
+            <td><input type="text" th:field="*{description}"></td>
+            <td><input type="submit" value="add"></td>
+        </form>
+    </tr>
+</table>
+</body>
+</html>

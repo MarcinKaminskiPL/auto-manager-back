@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expenses</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>CREATED AT</th>
+    <th>EXPENSE ID</th>
+    <th>CAR ID</th>
+    <th>VALUE</th>
+    <th>DESCRIPTION</th>
+    <th>PAYMENT METHOD</th>
+  </tr>
+  <tr th:each="expense : ${expenses}">
+    <td th:text="${expense.getCreatedAt()}"/>
+    <td th:text="${expense.getId()}"/>
+    <td th:text="${expense.getCarId()}"/>
+    <td th:text="${expense.getValue()}"/>
+    <td th:text="${expense.getDescription()}"/>
+    <td th:text="${expense.getPaymentMethod()}"/>
+  </tr>
+  <tr>
+    <form th:action="add-expense" th:object="${newExpense}" method="post">
+      <td>auto-increment</td>
+      <td>auto-increment</td>
+      <td><input type="text" th:field="*{carId}"></td>
+      <td><input type="text" th:field="*{value}"></td>
+      <td><input type="text" th:field="*{description}"></td>
+      <td><input type="text" th:field="*{paymentMethod}"></td>
+      <td><input type="submit" value="add"></td>
+    </form>
+  </tr>
+</table>
+</body>
+</html>
