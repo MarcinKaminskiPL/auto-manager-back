@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import net.mkaminski.autoManagerBackend.model.CarRepo;
 import net.mkaminski.autoManagerBackend.model.Car;
 import net.mkaminski.autoManagerBackend.model.ExpenseRepo;
+import net.mkaminski.autoManagerBackend.model.TripRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.Optional;
 public class CarService {
     private final CarRepo carRepo;
     private final ExpenseRepo expenseRepo;
+    private final TripRepo tripRepo;
 
     public List<Car> getCars() {
         return carRepo.findAll();

@@ -19,4 +19,8 @@ public class Car {
     @OneToMany
     @JoinColumn(name = "carId")
     private List<Expense> expenses;
+
+    @OneToMany
+    @JoinColumn(name = "carId")
+    private List<Trip> trips;
 }
