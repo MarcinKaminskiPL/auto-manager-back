@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/expenses")
 @RequiredArgsConstructor
-public class ExpensesApi {
+public class ExpenseApi {
 
     private final ExpenseService expenseService;
     private final CarService carService;
