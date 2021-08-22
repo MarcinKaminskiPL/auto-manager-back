@@ -11,13 +11,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequiredArgsConstructor
-public class CarsController {
+public class CarController {
     private final CarService carService;
 
     @GetMapping("/cars")
     public String get(Model model) {
         model.addAttribute("cars", carService.getCars());
         model.addAttribute("newCar", new Car());
+        model.addAttribute("numberOfCars", carService.numberOfCars());
+        model.addAttribute("averageOdometerStatus", carService.getAverageOdometerStatus());
         return "cars";
     }
     @PostMapping("/add-car")

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalDouble;
 
 @Service
 @RequiredArgsConstructor
@@ -41,5 +42,14 @@ public class CarService {
             tripRepo.deleteById(trip.getId());
         });
         carRepo.deleteById(id);
+    }
+
+    public int numberOfCars() {
+        return carRepo.findAll().size();
+    }
+
+    public int getAverageOdometerStatus() {
+        int averageOdometerStatus = ((int) carRepo.findAll().stream().mapToInt(Car::getOdometerstatus).average().getAsDouble());
+        return averageOdometerStatus;
     }
 }
