@@ -32,9 +32,7 @@
         <form th:action="add-trip" th:object="${newTrip}" method="post">
             <td>auto-add</td>
             <td>auto-increment</td>
-            <td>
-                <select></select>
-            </td>
+            <td><input type="text" th:field="*{carId}"></td>
             <td><input type="text" th:field="*{destination}"></td>
             <td><input type="number" th:field="*{distance}"></td>
             <td><input type="text" th:field="*{description}"></td>
