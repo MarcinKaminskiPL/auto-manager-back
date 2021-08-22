@@ -4,13 +4,12 @@
       lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Auto Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css">
+    <title>Trips</title>
 </head>
 <body>
-<h2>It's list of your trip:</h2>
+<h2>List of your trip:</h2>
 <table>
     <tr>
         <th>CREATED AT</th>
@@ -38,6 +37,18 @@
             <td><input type="text" th:field="*{description}"></td>
             <td><input type="submit" value="add"></td>
         </form>
+    </tr>
+</table>
+<hr>
+<h3>Statistics:</h3>
+<table>
+    <tr>
+        <td>Number of Your trips:</td>
+        <td><p th:text="${numberOfTrips}"></p></td>
+    </tr>
+    <tr>
+        <td>Sum of distance:</td>
+        <td><p th:text="${sumOfDistance}"></p></td>
     </tr>
 </table>
 </body>

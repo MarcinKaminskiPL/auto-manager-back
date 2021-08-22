@@ -48,8 +48,7 @@ public class CarService {
         return carRepo.findAll().size();
     }
 
-    public int getAverageOdometerStatus() {
-        int averageOdometerStatus = ((int) carRepo.findAll().stream().mapToInt(Car::getOdometerstatus).average().getAsDouble());
-        return averageOdometerStatus;
+    public double getAverageOdometerStatus() {
+        return carRepo.findAll().stream().mapToDouble(Car::getOdometerstatus).average().getAsDouble();
     }
 }

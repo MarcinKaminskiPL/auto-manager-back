@@ -4,9 +4,12 @@
       lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Expenses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css">
+  <title>Expenses</title>
 </head>
 <body>
+<h2>List of your expenses:</h2>
 <table>
   <tr>
     <th>CREATED AT</th>
@@ -34,6 +37,18 @@
       <td><input type="text" th:field="*{paymentMethod}"></td>
       <td><input type="submit" value="add"></td>
     </form>
+  </tr>
+</table>
+<hr>
+<h3>Statistics:</h3>
+<table>
+  <tr>
+    <td>Sum of expenses:</td>
+    <td><p th:text="${sumOfExpenses}"></p></td>
+  </tr>
+  <tr>
+    <td>Average value of expense:</td>
+    <td><p th:text="${averageValueOfExpense}"></p></td>
   </tr>
 </table>
 </body>

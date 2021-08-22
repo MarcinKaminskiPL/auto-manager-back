@@ -18,6 +18,8 @@ public class ExpenseController {
     public String get(Model model){
         model.addAttribute("expenses", expenseService.getExpenses());
         model.addAttribute("newExpense", new Expense());
+        model.addAttribute("sumOfExpenses", expenseService.getSumOfExpenses());
+        model.addAttribute("averageValueOfExpense", expenseService.getAverageValueOfExpense());
         return "expenses";
     }
 

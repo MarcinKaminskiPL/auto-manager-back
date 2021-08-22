@@ -3,6 +3,7 @@ package net.mkaminski.autoManagerBackend.services;
 import lombok.RequiredArgsConstructor;
 import net.mkaminski.autoManagerBackend.model.Trip;
 import net.mkaminski.autoManagerBackend.model.TripRepo;
+import org.springframework.data.geo.Distance;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -26,5 +27,13 @@ public class TripService {
     }
     public void deleteById(Long id){
         tripRepo.deleteById(id);
+    }
+
+    public int getSumOfDistance() {
+        return ((int) tripRepo.findAll().stream().mapToDouble(Trip::getDistance).sum());
+    }
+
+    public int getNumberOfTrips() {
+        return ((int) tripRepo.count());
     }
 }

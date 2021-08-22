@@ -19,6 +19,8 @@ public class TripController {
     public String get(Model model) {
         model.addAttribute("trips", tripService.getTrips());
         model.addAttribute("newTrip", new Trip());
+        model.addAttribute("numberOfTrips", tripService.getNumberOfTrips());
+        model.addAttribute("sumOfDistance", tripService.getSumOfDistance());
         return "trips";
     }
 

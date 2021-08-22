@@ -31,4 +31,12 @@ public class ExpenseService {
     public void deleteById(Long id) {
         expenseRepo.deleteById(id);
     }
+
+    public double getSumOfExpenses() {
+        return expenseRepo.findAll().stream().mapToDouble(Expense::getValue).sum();
+    }
+
+    public double getAverageValueOfExpense() {
+        return expenseRepo.findAll().stream().mapToDouble(Expense::getValue).average().getAsDouble();
+    }
 }
