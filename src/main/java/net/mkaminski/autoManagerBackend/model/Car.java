@@ -1,8 +1,10 @@
 package net.mkaminski.autoManagerBackend.model;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -14,7 +16,15 @@ public class Car {
     private long id;
     private String mark;
     private String model;
+    private String registrationNumber;
     private int odometerstatus;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate deadlineOfAC;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate deadlineOfOC;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate deadlineOfTechnicalInspection;
+
 
     @OneToMany
     @JoinColumn(name = "carId")

@@ -9,7 +9,7 @@
     <title>Trips</title>
 </head>
 <body>
-<h2>List of your trip:</h2>
+<h2>List of your trips:</h2>
 <table>
     <tr>
         <th>CREATED AT</th>
@@ -29,8 +29,8 @@
     </tr>
     <tr>
         <form th:action="add-trip" th:object="${newTrip}" method="post">
-            <td>auto-add</td>
-            <td>auto-increment</td>
+            <td>auto-insertion</td>
+            <td>auto-insertion</td>
             <td><input type="text" th:field="*{carId}"></td>
             <td><input type="text" th:field="*{destination}"></td>
             <td><input type="number" th:field="*{distance}"></td>

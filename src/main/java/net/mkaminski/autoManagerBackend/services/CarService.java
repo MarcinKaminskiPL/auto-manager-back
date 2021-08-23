@@ -1,15 +1,14 @@
 package net.mkaminski.autoManagerBackend.services;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.model.CarRepo;
 import net.mkaminski.autoManagerBackend.model.Car;
+import net.mkaminski.autoManagerBackend.model.CarRepo;
 import net.mkaminski.autoManagerBackend.model.ExpenseRepo;
 import net.mkaminski.autoManagerBackend.model.TripRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.OptionalDouble;
 
 @Service
 @RequiredArgsConstructor

@@ -15,20 +15,32 @@
         <th>CAR ID</th>
         <th>MARK</th>
         <th>MODEL</th>
+        <th>REGISTRATION NUMBER</th>
         <th>ODOMETER STATUS</th>
+        <th>DEADLINE OF OC</th>
+        <th>DEADLINE OF AC</th>
+        <th>DEADLINE OF TECHNICAL INSPECTION</th>
     </tr>
     <tr th:each="car : ${cars}">
         <td th:text="${car.getId()}"/>
         <td th:text="${car.getMark()}"/>
         <td th:text="${car.getModel()}"/>
+        <td th:text="${car.getRegistrationNumber()}"/>
         <td th:text="${car.getOdometerstatus()}"/>
+        <td th:text="${car.getDeadlineOfOC()}"/>
+        <td th:text="${car.getDeadlineOfAC()}"/>
+        <td th:text="${car.getDeadlineOfTechnicalInspection()}"/>
     </tr>
     <tr>
         <form th:action="add-car" th:object="${newCar}" method="post">
-            <td>auto-increment</td>
+            <td>auto-insertion</td>
             <td><input type="text" th:field="*{mark}"></td>
             <td><input type="text" th:field="*{model}"></td>
-            <td><input type="text" th:field="*{odometerstatus}"></td>
+            <td><input type="text" th:field="*{registrationNumber}"></td>
+            <td><input type="number" th:field="*{odometerstatus}"></td>
+            <td><input type="date" th:field="*{deadlineOfOC}"></td>
+            <td><input type="date" th:field="*{deadlineOfAC}"></td>
+            <td><input type="date" th:field="*{deadlineOfTechnicalInspection}"></td>
             <td><input type="submit" value="add"></td>
         </form>
     </tr>
