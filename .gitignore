@@ -1,5 +1,3 @@
-/src/main/resources/DBCredentials.txt
-
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -33,5 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
-/dataBase.mv.db
+/dataBase1.mv.db
 /dataBase.trace.db
