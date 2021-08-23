@@ -10,8 +10,10 @@ public class AutoManagerBackendApplication {
 
     /*
      TODO add readme.md
-     TODO add index page
+     TODO add paging in API
+     TODO add PATCH methods in API
      TODO add tests
+     TODO implements Spring Security
      TODO change database to postgres
      TODO  connect postgres on heroku
      TODO collect stats to the one endpoint
