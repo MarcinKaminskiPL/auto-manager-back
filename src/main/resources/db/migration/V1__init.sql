@@ -1,3 +1,5 @@
+/*TODO actualize script */
+
 create table car
 (
     id             int primary key auto_increment,
