@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css">
+</head>
+<body>
+<h2>Endpoints map:</h2>
+<div>
+    <h3>Views in thymeleaf:</h3>
+    <p>(simple statistics under each table)</p>
+<a th:href="@{/cars}">cars</a><br>
+<a th:href="@{/expenses}">expenses</a><br>
+<a th:href="@{/trips}">trips</a><br>
+
+</div>
+<div>
+    <h3>API for connect from other app:</h3><br>
+<a th:href="@{/api/cars}">api/cars</a><br>
+<a th:href="@{/api/expenses}">api/expenses</a><br>
+<a th:href="@{/api/trips}">api/trips</a><br>
+</div>
+<div>
+    <h3>Other:</h3><br>
+    <a th:href="@{/swagger-ui/}">swagger UI</a><br>
+    <a href="https://github.com/MarcinKaminskiPL/auto-manager-back">repo in GitHub</a><br>
+</div>
+</body>
+</html>
