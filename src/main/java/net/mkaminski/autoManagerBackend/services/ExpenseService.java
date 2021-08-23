@@ -37,6 +37,11 @@ public class ExpenseService {
     }
 
     public double getAverageValueOfExpense() {
-        return expenseRepo.findAll().stream().mapToDouble(Expense::getValue).average().getAsDouble();
+        if(expenseRepo.count()>0){
+            return expenseRepo.findAll().stream().mapToDouble(Expense::getValue).average().getAsDouble();
+        } else{
+            return 0;
+        }
+
     }
 }
