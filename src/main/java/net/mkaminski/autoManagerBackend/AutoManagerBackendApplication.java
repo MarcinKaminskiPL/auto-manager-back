@@ -16,6 +16,7 @@ public class AutoManagerBackendApplication {
      TODO implements Spring Security
      TODO change database to postgres
      TODO  connect postgres on heroku
+     TODO creating a statistics table using triggers in the database
      TODO collect stats to the one endpoint
 */
     public static void main(String[] args) {
