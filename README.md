@@ -12,6 +12,7 @@
     <p>As an aid, views in the Thymeleaf framework have been created.</p>
 </div>
 <h2>Endpoints map:</h2>
+You can try app in <a href="https://auto-manager-back.herokuapp.com/">Heroku</a>
 <div>
     <h3>API for connect from other app:</h3><br>
     <a th:href="@{/api/cars}">api/cars</a><br>
@@ -40,4 +41,5 @@
     <p>- Swagger</p>
     <p>- Thymeleaf</p>
     <p>- Git</p>
+    <p>- Heroku</p>
 </div>
