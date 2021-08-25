@@ -2,8 +2,7 @@
 <br>
 <div>
     <p>The Auto Manager application <strong>supports the management of the car fleet</strong> by:
-    <p>- control of basic terms related to third party liability insurance, comprehensive car insurance and technical
-        inspection of cars,</p>
+    <p>- control of basic deadlines of liability insurance, comprehensive car insurance and technical inspections of cars,</p>
     <p>- control of expenses related to individual vehicles,</p>
     <p>- the ability to register basic information about trips.</p>
 </div>
