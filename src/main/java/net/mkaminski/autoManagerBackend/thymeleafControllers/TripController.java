@@ -1,8 +1,7 @@
-package net.mkaminski.autoManagerBackend.thymeleafController;
+package net.mkaminski.autoManagerBackend.thymeleafControllers;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.model.Trip;
-import net.mkaminski.autoManagerBackend.services.CarService;
+import net.mkaminski.autoManagerBackend.model.entities.Trip;
 import net.mkaminski.autoManagerBackend.services.TripService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

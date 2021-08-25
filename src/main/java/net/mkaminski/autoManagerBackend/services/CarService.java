@@ -1,10 +1,10 @@
 package net.mkaminski.autoManagerBackend.services;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.model.Car;
-import net.mkaminski.autoManagerBackend.model.CarRepo;
-import net.mkaminski.autoManagerBackend.model.ExpenseRepo;
-import net.mkaminski.autoManagerBackend.model.TripRepo;
+import net.mkaminski.autoManagerBackend.model.entities.Car;
+import net.mkaminski.autoManagerBackend.model.repositories.CarRepo;
+import net.mkaminski.autoManagerBackend.model.repositories.ExpenseRepo;
+import net.mkaminski.autoManagerBackend.model.repositories.TripRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,8 +25,8 @@ public class CarService {
         return carRepo.findById(id);
     }
 
-    public void add(Car car) {
-        carRepo.save(car);
+    public Car save(Car car) {
+        return carRepo.save(car);
     }
 
     public boolean existsById(Long id) {
@@ -53,5 +53,9 @@ public class CarService {
         } else {
             return 0;
         }
+    }
+
+    public Optional<Car> findById(Long id) {
+        return carRepo.findById(id);
     }
 }

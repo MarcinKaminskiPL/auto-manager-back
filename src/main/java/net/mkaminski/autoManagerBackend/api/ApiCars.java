@@ -1,7 +1,7 @@
 package net.mkaminski.autoManagerBackend.api;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.model.Car;
+import net.mkaminski.autoManagerBackend.model.entities.Car;
 import net.mkaminski.autoManagerBackend.services.CarService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/cars")
 @RequiredArgsConstructor
-public class CarApi {
+public class ApiCars {
     private final CarService carService;
 
     @GetMapping
@@ -23,11 +23,11 @@ public class CarApi {
 
     @PostMapping
     ResponseEntity<Car> addCar(@RequestBody Car car) {
-        carService.add(car);
+        carService.save(car);
         return ResponseEntity.created(URI.create("/" + car.getId())).body(car);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     ResponseEntity deleteCar(@PathVariable Long id) {
         if (carService.existsById(id)) {
             carService.deleteById(id);

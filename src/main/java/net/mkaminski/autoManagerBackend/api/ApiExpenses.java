@@ -1,7 +1,7 @@
 package net.mkaminski.autoManagerBackend.api;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.model.Expense;
+import net.mkaminski.autoManagerBackend.model.entities.Expense;
 import net.mkaminski.autoManagerBackend.services.CarService;
 import net.mkaminski.autoManagerBackend.services.ExpenseService;
 import org.springframework.http.HttpStatus;
@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/expenses")
 @RequiredArgsConstructor
-public class ExpenseApi {
+public class ApiExpenses {
 
     private final ExpenseService expenseService;
     private final CarService carService;

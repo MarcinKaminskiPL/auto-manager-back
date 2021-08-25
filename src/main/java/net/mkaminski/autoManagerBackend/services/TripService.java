@@ -1,9 +1,8 @@
 package net.mkaminski.autoManagerBackend.services;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.model.Trip;
-import net.mkaminski.autoManagerBackend.model.TripRepo;
-import org.springframework.data.geo.Distance;
+import net.mkaminski.autoManagerBackend.model.entities.Trip;
+import net.mkaminski.autoManagerBackend.model.repositories.TripRepo;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;

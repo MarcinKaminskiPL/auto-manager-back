@@ -1,7 +1,7 @@
-package net.mkaminski.autoManagerBackend.thymeleafController;
+package net.mkaminski.autoManagerBackend.thymeleafControllers;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.model.Expense;
+import net.mkaminski.autoManagerBackend.model.entities.Expense;
 import net.mkaminski.autoManagerBackend.services.ExpenseService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

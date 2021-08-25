@@ -1,7 +1,7 @@
 package net.mkaminski.autoManagerBackend.api;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.model.Trip;
+import net.mkaminski.autoManagerBackend.model.entities.Trip;
 import net.mkaminski.autoManagerBackend.services.CarService;
 import net.mkaminski.autoManagerBackend.services.TripService;
 import org.springframework.http.HttpStatus;
@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/trips")
 @RequiredArgsConstructor
-public class TripApi {
+public class ApiTrips {
     private final TripService tripService;
     private final CarService carService;
 

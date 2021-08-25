@@ -1,7 +1,7 @@
-package net.mkaminski.autoManagerBackend.thymeleafController;
+package net.mkaminski.autoManagerBackend.thymeleafControllers;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.model.Car;
+import net.mkaminski.autoManagerBackend.model.entities.Car;
 import net.mkaminski.autoManagerBackend.services.CarService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +24,7 @@ public class CarController {
     }
     @PostMapping("/add-car")
     public String addCar(@ModelAttribute Car car){
-        carService.add(car);
+        carService.save(car);
         return "redirect:/cars";
     }
 }

@@ -1,6 +1,7 @@
-package net.mkaminski.autoManagerBackend.model;
+package net.mkaminski.autoManagerBackend.model.entities;
 
 import lombok.Data;
+import net.mkaminski.autoManagerBackend.model.PaymentMethod;
 
 import javax.persistence.*;
 

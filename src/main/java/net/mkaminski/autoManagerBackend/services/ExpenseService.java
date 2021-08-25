@@ -1,8 +1,8 @@
 package net.mkaminski.autoManagerBackend.services;
 
 import lombok.RequiredArgsConstructor;
-import net.mkaminski.autoManagerBackend.model.Expense;
-import net.mkaminski.autoManagerBackend.model.ExpenseRepo;
+import net.mkaminski.autoManagerBackend.model.entities.Expense;
+import net.mkaminski.autoManagerBackend.model.repositories.ExpenseRepo;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;

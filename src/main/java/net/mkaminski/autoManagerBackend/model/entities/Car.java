@@ -1,4 +1,4 @@
-package net.mkaminski.autoManagerBackend.model;
+package net.mkaminski.autoManagerBackend.model.entities;
 
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;

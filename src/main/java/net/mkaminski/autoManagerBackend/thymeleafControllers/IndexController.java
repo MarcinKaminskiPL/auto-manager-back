@@ -1,4 +1,4 @@
-package net.mkaminski.autoManagerBackend.thymeleafController;
+package net.mkaminski.autoManagerBackend.thymeleafControllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
