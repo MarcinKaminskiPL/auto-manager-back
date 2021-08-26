@@ -33,3 +33,4 @@ build/
 .vscode/
 /dataBase1.mv.db
 /dataBase.trace.db
+/dataBase.mv.db
