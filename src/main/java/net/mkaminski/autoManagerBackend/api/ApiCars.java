@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -20,6 +21,11 @@ public class ApiCars {
     @GetMapping
     ResponseEntity<List<Car>> getCars() {
         return ResponseEntity.ok(carService.getCars());
+    }
+
+    @GetMapping("/{id}")
+    ResponseEntity<Optional<Car>> getById(@PathVariable Long id){
+        return ResponseEntity.ok(carService.findById(id));
     }
 
     @PostMapping
