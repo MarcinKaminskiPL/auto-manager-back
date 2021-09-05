@@ -3,6 +3,8 @@ package net.mkaminski.autoManagerBackend.api;
 import lombok.RequiredArgsConstructor;
 import net.mkaminski.autoManagerBackend.model.entities.Car;
 import net.mkaminski.autoManagerBackend.services.CarService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +20,14 @@ import java.util.Optional;
 public class ApiCars {
     private final CarService carService;
 
-    @GetMapping
+    @GetMapping(params = {"!sort", "!page", "!size"})
     ResponseEntity<List<Car>> getCars() {
         return ResponseEntity.ok(carService.getCars());
+    }
+
+    @GetMapping
+    ResponseEntity<Page<Car>> getCars(Pageable pageable) {
+        return ResponseEntity.ok(carService.getCars(pageable));
     }
 
     @GetMapping("/{id}")
