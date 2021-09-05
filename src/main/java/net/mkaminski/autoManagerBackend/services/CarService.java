@@ -2,9 +2,11 @@ package net.mkaminski.autoManagerBackend.services;
 
 import lombok.RequiredArgsConstructor;
 import net.mkaminski.autoManagerBackend.model.entities.Car;
-import net.mkaminski.autoManagerBackend.model.repositories.CarRepo;
-import net.mkaminski.autoManagerBackend.model.repositories.ExpenseRepo;
-import net.mkaminski.autoManagerBackend.model.repositories.TripRepo;
+import net.mkaminski.autoManagerBackend.model.repositories.CarRepository;
+import net.mkaminski.autoManagerBackend.model.repositories.ExpenseRepository;
+import net.mkaminski.autoManagerBackend.model.repositories.TripRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,49 +15,52 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class CarService {
-    private final CarRepo carRepo;
-    private final ExpenseRepo expenseRepo;
-    private final TripRepo tripRepo;
+    private final CarRepository carRepository;
+    private final ExpenseRepository expenseRepository;
+    private final TripRepository tripRepository;
 
     public List<Car> getCars() {
-        return carRepo.findAll();
+        return carRepository.findAll();
+    }
+    public Page<Car> getCars(Pageable pageable) {
+        return carRepository.findAll(pageable);
     }
 
     public Optional<Car> getCar(long id) {
-        return carRepo.findById(id);
+        return carRepository.findById(id);
     }
 
     public Car save(Car car) {
-        return carRepo.save(car);
+        return carRepository.save(car);
     }
 
     public boolean existsById(Long id) {
-        return carRepo.existsById(id);
+        return carRepository.existsById(id);
     }
 
     public void deleteById(Long id) {
-        carRepo.findById(id).get().getExpenses().forEach(expense -> {
-            expenseRepo.deleteById(expense.getId());
+        carRepository.findById(id).get().getExpenses().forEach(expense -> {
+            expenseRepository.deleteById(expense.getId());
         });
-        carRepo.findById(id).get().getTrips().forEach(trip -> {
-            tripRepo.deleteById(trip.getId());
+        carRepository.findById(id).get().getTrips().forEach(trip -> {
+            tripRepository.deleteById(trip.getId());
         });
-        carRepo.deleteById(id);
+        carRepository.deleteById(id);
     }
 
-    public int numberOfCars() {
-        return carRepo.findAll().size();
+    public long numberOfCars() {
+        return carRepository.count();
     }
 
     public double getAverageOdometerStatus() {
-        if (carRepo.count() > 0) {
-            return carRepo.findAll().stream().mapToDouble(Car::getOdometerstatus).average().getAsDouble();
+        if (carRepository.count() > 0) {
+            return carRepository.findAll().stream().mapToDouble(Car::getOdometerstatus).average().getAsDouble();
         } else {
             return 0;
         }
     }
 
     public Optional<Car> findById(Long id) {
-        return carRepo.findById(id);
+        return carRepository.findById(id);
     }
 }
