@@ -41,6 +41,12 @@ public class ApiCars {
         return ResponseEntity.created(URI.create("/" + car.getId())).body(car);
     }
 
+    @PutMapping
+    ResponseEntity<Car> addCar(@RequestBody Car car) {
+        carService.save(car);
+        return ResponseEntity.created(URI.create("/" + car.getId())).body(car);
+    }
+
     @DeleteMapping("/{id}")
     ResponseEntity deleteCar(@PathVariable Long id) {
         if (carService.existsById(id)) {
