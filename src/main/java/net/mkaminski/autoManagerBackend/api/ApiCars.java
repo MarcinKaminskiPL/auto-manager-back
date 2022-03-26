@@ -42,8 +42,9 @@ public class ApiCars {
     }
 
     @PutMapping
-    ResponseEntity<Car> addCar(@RequestBody Car car) {
-        carService.save(car);
+    ResponseEntity<Car> updateCar(@RequestBody Car car) {
+            carService.save(car);
+
         return ResponseEntity.created(URI.create("/" + car.getId())).body(car);
     }
 
